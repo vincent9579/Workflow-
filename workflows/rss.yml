@@ -2,6 +2,23 @@ on:
   youtube:
     channel_id:
       - UCoSrY_IQQVpmIRZ9Xf-y93g
+      - UCWGJ3y5mujy-CQP8Oq6HCPA
+      - UCScnr-YcRRswy205BI4FfKA
+      - UCL_qhgtOy0dy1Agp8vkySQg
+      - UCxpE_HS5QWhpahlmd83GpTA
+      - UCl_gCybOJRIgOXw6Qb4qJzQ
+      - UCBW2LtGg2IeDrVi9jjywNtg 
+      - UCEPcLKruXUnbZ_5uN06Xztw
+      - UC1DCedRgGHBdm81E1llLhOQ
+      - UCvaOYnoh3IF2peIdIBviOpg
+      - UCHz2cAqLANEEQR3O_6Txs_w
+      - UCwuWSrd4BGg9JwhDqobBKWg
+      - UChAnqc_AY5_I3Px5dig3X1Q
+      - UCqm3BQLlJfvkTsX_hvm0UmA
+      - UCCzUftO8KOVkV4wQG1vkUvg
+      - UCdyqAaZDKHXg4Ahi7VENThQ
+      - UCXTpFs_3PqI41qX2d9tL2Rw
+      - UCV3UfXa91VhFLMo_EtM9FEg
 jobs:
   webhook:
     name: Send HTTP Request
@@ -13,4 +30,4 @@ jobs:
           url: https://notify-api.line.me/api/notify
           method: 'POST'
           headers: '{ "Authorization": "Bearer Qshih7atOJTO3wkEOV8G2WRAHx68FwL5nwV81G6Yxsc" }'
-          data: {'message': '${{on.youtube.outputs.title}} ${{on.youtube.outputs.description}} ${{on.youtube.outputs.link}}' }
+          data: {'message': '【DD警報】${{on.youtube.outputs.title}} ${{on.youtube.outputs.link}}' }
