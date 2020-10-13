@@ -13,4 +13,4 @@ jobs:
           url: https://notify-api.line.me/api/notify
           method: 'POST'
           headers: '{ "Authorization": "Bearer Qshih7atOJTO3wkEOV8G2WRAHx68FwL5nwV81G6Yxsc" }'
-          body: ${{on.youtube.outputs.title}} ${{on.youtube.outputs.description}} ${{on.youtube.outputs.link}}
+          data: {'message': '${{on.youtube.outputs.title}} ${{on.youtube.outputs.description}} ${{on.youtube.outputs.link}}' }
