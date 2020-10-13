@@ -1,17 +1,16 @@
 on:
-  rss:
-    url: https://hnrss.org/newest?points=300&count=3
+  youtube:
+    channel_id:
+      - UCoSrY_IQQVpmIRZ9Xf-y93g
 jobs:
-  print:
-    name: Print
+  webhook:
+    name: Send HTTP Request
     runs-on: ubuntu-latest
     steps:
-      - name: Print Outputs
-        env:
-          title: ${{on.rss.outputs.title}}
-          contentSnippet: ${{on.rss.outputs.contentSnippet}}
-          link: ${{on.rss.outputs.link}}
-        run: |
-          echo title: $title
-          echo contentSnippet: $contentSnippet
-          echo link: $link
+      - name: Send HTTP Request
+        uses: actionsflow/axios@v1
+        with:
+          url: https://notify-api.line.me/api/notify
+          method: 'POST'
+          headers: '{ "Authorization": "Bearer Qshih7atOJTO3wkEOV8G2WRAHx68FwL5nwV81G6Yxsc" }'
+          body: ${{on.youtube.outputs.title}} ${{on.youtube.outputs.description}} ${{on.youtube.outputs.link}}
