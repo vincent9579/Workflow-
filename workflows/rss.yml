@@ -26,8 +26,12 @@ jobs:
     steps:
       - name: Send HTTP Request
         uses: actionsflow/axios@v1
+        id: api
         with:
           url: https://notify-api.line.me/api/notify
           method: 'POST'
           headers: '{ "Authorization": "Bearer Qshih7atOJTO3wkEOV8G2WRAHx68FwL5nwV81G6Yxsc" }'
           data: '{"message": "${{on.youtube.outputs.title}} ${{on.youtube.outputs.link}}" }'
+      - run: echo ${{ steps.api.outputs.status }}
+      - run: echo ${{ steps.api.outputs.data }}
+      - run: echo ${{ steps.api.outputs.headers }}
