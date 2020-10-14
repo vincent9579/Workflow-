@@ -20,15 +20,12 @@ on:
       - UCXTpFs_3PqI41qX2d9tL2Rw
       - UCV3UfXa91VhFLMo_EtM9FEg
 jobs:
-  webhook:
-    name: Send HTTP Request
+  notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Send HTTP Request
-        uses: actionsflow/axios@v1
+      - uses: snow-actions/line-notify@v1.0.0
         with:
-          url: https://notify-api.line.me/api/notify
-          method: 'POST'
-          headers: '{ "content-type": "application/x-www-form-urlencoded","Authorization": "Bearer Qshih7atOJTO3wkEOV8G2WRAHx68FwL5nwV81G6Yxsc" }'
-          body: '{"message": "${{on.youtube.outputs.title}} ${{on.youtube.outputs.link}}" }'
+          access_token: Qshih7atOJTO3wkEOV8G2WRAHx68FwL5nwV81G6Yxsc
+          message: ${{on.youtube.outputs.title}} ${{on.youtube.outputs.link}}
+
       
