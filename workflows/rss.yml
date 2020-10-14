@@ -26,7 +26,6 @@ jobs:
     steps:
       - name: Send HTTP Request
         uses: actionsflow/axios@v1
-        id: api
         with:
           url: https://notify-api.line.me/api/notify
           method: 'POST'
