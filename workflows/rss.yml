@@ -29,7 +29,6 @@ jobs:
         with:
           url: https://notify-api.line.me/api/notify
           method: 'POST'
-          headers: '{ "Authorization": "Bearer Qshih7atOJTO3wkEOV8G2WRAHx68FwL5nwV81G6Yxsc" }'
-          content-type: application/x-www-form-urlencoded
+          headers: '{ "content-type": "application/x-www-form-urlencoded","Authorization": "Bearer Qshih7atOJTO3wkEOV8G2WRAHx68FwL5nwV81G6Yxsc" }'
           data: '{"message": "${{on.youtube.outputs.title}} ${{on.youtube.outputs.link}}" }'
       
