@@ -30,6 +30,6 @@ jobs:
           url: https://notify-api.line.me/api/notify
           method: 'POST'
           headers: '{ "Authorization": "Bearer Qshih7atOJTO3wkEOV8G2WRAHx68FwL5nwV81G6Yxsc" }'
-          content-type: multipart/form-data
+          content-type: application/x-www-form-urlencoded
           data: '{"message": "${{on.youtube.outputs.title}} ${{on.youtube.outputs.link}}" }'
       
